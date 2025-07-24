@@ -24,14 +24,14 @@ const Navbar = () => {
       </ul>
       <div className='flex items-center gap-4'>
         {token ? 
-        <div className='flex items-center'>
+        <div className='flex items-center group relative'>
           <img src='./src/assets/profile.png' alt='profile' className='w-9 h-9 cursor-pointer'/>
           <img src='./src/assets/dropDown.png' alt='arrow' className='w-5 h-5 cursor-pointer'/>
           <div className='absolute top-0 right-0 pt-14 text-base font-medium text-gray-600 z-20 hidden group-hover:block'>
-            <div>
-              <p>My Profile</p>
-              <p>My Journey</p>
-              <p>Log Out</p>
+            <div className='min-w-48 bg-transparent rounded-2xl flex flex-col gap-4 p-4'>
+              <p className='hover:text-black cursor-pointer'>My Profile</p>
+              <p className='hover:text-black cursor-pointer'>My Journey</p>
+              <p className='hover:text-black cursor-pointer'>Log Out</p>
             </div>
           </div>
         </div>
