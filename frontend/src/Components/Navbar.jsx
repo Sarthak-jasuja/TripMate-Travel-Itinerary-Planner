@@ -29,9 +29,9 @@ const Navbar = () => {
           <img src='./src/assets/dropDown.png' alt='arrow' className='w-5 h-5 cursor-pointer'/>
           <div className='absolute top-0 right-0 pt-14 text-base font-medium text-gray-600 z-20 hidden group-hover:block'>
             <div className='min-w-48 bg-transparent rounded-2xl flex flex-col gap-4 p-4'>
-              <p className='hover:text-black cursor-pointer'>My Profile</p>
-              <p className='hover:text-black cursor-pointer'>My Journey</p>
-              <p className='hover:text-black cursor-pointer'>Log Out</p>
+              <p onClick={()=>navigate('MyProfile')}className='hover:text-black cursor-pointer hover:scale-105 transition-all duration-300'>My Profile</p>
+              <p onClick={()=>navigate('PlanManage')}className='hover:text-black cursor-pointer hover:scale-105 transition-all duration-300'>My Journey</p>
+              <p onClick={()=>setToken(false)}className='hover:text-black cursor-pointer hover:scale-105 transition-all duration-300'>Log Out</p>
             </div>
           </div>
         </div>
