@@ -1,12 +1,12 @@
 import React from 'react'
 import Header from '../Components/Header'
-import MainJourney from '../Components/MainJourney'
+import Journey from '../Components/Journey'
 
 const Home = () => {
   return (
     <div>
         <Header />
-        <MainJourney />
+        <Journey  />
     </div>
   )
 }

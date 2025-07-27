@@ -11,7 +11,7 @@ const Header = () => {
             <div>
                 <p>your ultimate travel itinerary planner!</p>
             </div>
-            <a href='' className='flex text-white bg-black px-8 py-3 rounded-full text-sm m-auto md:m-0 hover:scale-105 transition-all duration-300'>Plan Journey
+            <a href='#journey' className='flex text-white bg-black px-8 py-3 rounded-full text-sm m-auto md:m-0 hover:scale-105 transition-all duration-300'>Plan Journey
                 <img src='./src/assets/arrowRight.png' alt='arrow' className='w-6 h-6 cursor-pointer'/>
             </a>
             
