@@ -4,7 +4,7 @@ import { Route, Routes } from 'react-router-dom'
 import About from './pages/About.jsx'
 import Contact from './pages/Contact.jsx'
 import MyProfile from './pages/MyProfile.jsx'
-import Navbar from './components/Navbar.jsx'
+import Navbar from './Components/Navbar.jsx'
 const App = () => {
   return (
     <div className='mx-4 sm:mx-[10%]'>
