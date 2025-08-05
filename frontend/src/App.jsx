@@ -6,6 +6,7 @@ import Contact from './pages/Contact.jsx'
 import MyProfile from './pages/MyProfile.jsx'
 import Navbar from './Components/Navbar.jsx'
 import Journey from './pages/Journey.jsx'
+import Createtrip from '../create-trip/Index.jsx'
 const App = () => {
   return (
     <div className='mx-4 sm:mx-[10%]'>
