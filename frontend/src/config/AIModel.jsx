@@ -1,23 +1,31 @@
-
 import {
   GoogleGenAI,
 } from '@google/genai';
-export const ai = new GoogleGenAI({
-  apiKey: import.meta.env.VITE_AIMODEL_KEY,
-});
-const config = {
-  thinkingConfig: {
-    thinkingBudget: -1,
 
-  },
-};
-const model = 'gemini-2.5-pro';
-const contents = [
-  {
-    role: 'model',
-    parts: [
-      {
-        text: `**Constructing the JSON Response**
+async function main() {
+  const ai = new GoogleGenAI({
+    apiKey: process.env.GEMINI_API_KEY,
+  });
+  const config = {
+    thinkingConfig: {
+      thinkingBudget: -1,
+    },
+  };
+  const model = 'gemini-2.5-pro';
+  const contents = [
+    {
+      role: 'user',
+      parts: [
+        {
+          text: `Generate Travel Plan for a Location {destination} for {days} Days for {NoOfTravelers} with a {budget} budget, Give me a Hotels options list with HotelName, Hotel address, Price, hotel image url, geo coordinates, rating, descriptions and suggest itinerary with placeName, Place Details, Place Image Url, Geo Coordinates, ticket Pricing, rating, Time travel each of the location for 3 days with each day plan with best time to visit in JSON format. `,
+        },
+      ],
+    },
+    {
+      role: 'model',
+      parts: [
+        {
+          text: `**Constructing the JSON Response**
 
 I've initiated the process of developing a JSON response for a travel plan. My primary focus involves deconstructing the user's request, specifically identifying the core task of travel plan generation. I am currently working on extracting key input variables, such as \`{destination}\` and \`{days}\`, to populate the JSON structure effectively.
 
@@ -71,9 +79,9 @@ I'm now focusing on curating the hotel options. I'm collecting data for the chos
 
 
 `,
-      },
-      {
-        text: `\`\`\`json
+        },
+        {
+          text: `\`\`\`json
 {
   "travelPlan": {
     "destination": "{destination}",
@@ -250,8 +258,28 @@ I'm now focusing on curating the hotel options. I'm collecting data for the chos
   ]
 }
 \`\`\``,
-      },
-    ],
-  },
-];
+        },
+      ],
+    },
+    {
+      role: 'user',
+      parts: [
+        {
+          text: `INSERT_INPUT_HERE`,
+        },
+      ],
+    },
+  ];
 
+  const response = await ai.models.generateContentStream({
+    model,
+    config,
+    contents,
+  });
+  let fileIndex = 0;
+  for await (const chunk of response) {
+    console.log(chunk.text);
+  }
+}
+
+main();
