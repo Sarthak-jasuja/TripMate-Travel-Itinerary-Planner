@@ -5,10 +5,8 @@ import { Toaster } from './Components/ui/sonner.jsx'
 import {BrowserRouter} from 'react-router-dom'
 
 createRoot(document.getElementById('root')).render(
-  <GoogleOAuthProvider clientId={import.meta.env.VITE_GOOGLE_CLIENT_ID}>
     <BrowserRouter>
       <Toaster />
       <App />
     </BrowserRouter>
-  </GoogleOAuthProvider>
 )
