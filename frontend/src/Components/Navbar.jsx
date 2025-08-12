@@ -7,7 +7,7 @@ const Navbar = () => {
   const [token, setToken] = useState(true);
   return (
     <div className='flex items-center justify-between py-4 text-sm mb-4 border-b border-b-black'>
-      <img onClick={()=>navigate('/')} src='./src/assets/logo.png' alt='logo' className='w-25 cursor-pointer'/>
+      <img onClick={()=>navigate('/')} src='/Assets/Logo.png' alt='logo' className='w-25 cursor-pointer'/>
       <ul className='hidden md:flex items-start gap-10 font-medium'>
         <NavLink to='/'>
           <li className='py-1 '>HOME</li>
@@ -25,8 +25,8 @@ const Navbar = () => {
       <div className='flex items-center gap-4'>
         {token ? 
         <div className='flex items-center group relative'>
-          <img src='./src/assets/profile.png' alt='profile' className='w-9 h-9 cursor-pointer'/>
-          <img src='./src/assets/dropDown.png' alt='arrow' className='w-5 h-5 cursor-pointer'/>
+          <img src='/Assets/profile.png' alt='profile' className='w-9 h-9 cursor-pointer'/>
+          <img src='/Assets/dropDown.png' alt='arrow' className='w-5 h-5 cursor-pointer'/>
           <div className='absolute top-0 right-0 pt-14 text-base font-medium text-gray-600 z-20 hidden group-hover:block'>
             <div className='min-w-48 bg-transparent rounded-2xl flex flex-col gap-4 p-4'>
               <p onClick={()=>navigate('MyProfile')}className='hover:text-black cursor-pointer hover:scale-105 transition-all duration-300'>My Profile</p>

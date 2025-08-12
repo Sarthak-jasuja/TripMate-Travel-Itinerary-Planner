@@ -40,7 +40,9 @@ const Journey = () => {
 
   return (
     <div className='sm:px-10 md:px-32 lg:px-56 xl:px-10 px-5 mt-10'>
-      <h2 className='font-bold text-4xl'>Where do you want to go?⛰️🏝️</h2>
+      <h2 className='font-bold text-4xl'>Where do you want to go?
+        <span className="material-symbols-outlined text-6xl align-middle">flight</span>
+      </h2>
       <p className=''>"Enter the basic details, Tripmate will do the rest for you"</p>
       <div className='mt-12 flex flex-col gap-10'>
         <div>
@@ -90,7 +92,7 @@ const Journey = () => {
           </div>
         </div>
       </div>
-      <div className="my-10 justify-end flex">
+      <div className="my-10 justify-items-start flex">
         <Button onClick={() => onGenerateTrip()}
         className="cursor-pointer">Generate trip</Button>
       </div>

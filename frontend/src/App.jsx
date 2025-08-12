@@ -18,6 +18,7 @@ const App = () => {
             <Route path='/profile/:my-journey' element={<MyProfile />} />
             <Route path='/profile' element={<MyProfile />} />
             <Route path='/Journey' element={<Journey />} />
+            
         </Routes>
     </div>
   )
