@@ -1,4 +1,4 @@
-import { Input } from "@/components/ui/input"
+import { Input } from "../Components/ui/input";
 import React, { use, useEffect, useState } from 'react';
 import GooglePlacesAutocomplete from 'react-google-places-autocomplete';
 import { BudgetList, SelectTravelList,AI_PROMPT } from "../constants/Options";
