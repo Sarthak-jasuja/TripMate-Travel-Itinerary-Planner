@@ -3,7 +3,7 @@ import { Link } from 'react-router-dom';
 
 const Header = () => {
   return (
-    <div className='flex flex-col md:flex-row flex-wrap rounded-2xl px-6 md:px-10 lg:px-20 min-h-screen overflow-hidden'>
+    <div className='flex flex-col md:flex-row flex-wrap rounded-2xl px-6 md:px-10 lg:px-20 overflow-hidden' style={{ minHeight: "calc(100vh - 100px)" }}>
 
       {/* left side */}
       <div className='order-2 md:order-1 md:w-1/2 flex flex-col items-start justify-center gap-4 py-10 m-auto md:py-0'>

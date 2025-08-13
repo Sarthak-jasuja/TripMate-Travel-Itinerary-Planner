@@ -20,7 +20,7 @@ const ContactUs = () => {
   };
 
   return (
-    <div className="max-w-2xl mx-auto p-6 bg-white rounded-2xl shadow-sm">
+    <div className="max-w-2xl mx-auto p-6 rounded-2xl shadow-sm" style={{ minHeight: "calc(100vh - 100px)" }}>
       <h1 className="text-2xl font-semibold mb-2">Contact Us   
         <span className="material-symbols-outlined text-4xl">mail</span>
       </h1>

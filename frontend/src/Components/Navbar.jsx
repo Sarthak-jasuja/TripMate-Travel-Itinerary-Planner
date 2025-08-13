@@ -4,7 +4,7 @@ import { NavLink, useNavigate} from 'react-router-dom'
 const Navbar = () => {
   const navigate = useNavigate();
   const [showMenu, setShowMenu] = useState(false);
-  const [token, setToken] = useState(true);
+  const [token, setToken] = useState(localStorage.getItem('token') ? true : false);
   return (
     <div className='flex items-center justify-between py-4 text-sm mb-4 border-b border-b-black'>
       <img onClick={()=>navigate('/')} src='/Assets/Logo.png' alt='logo' className='w-25 cursor-pointer'/>
@@ -35,7 +35,7 @@ const Navbar = () => {
             </div>
           </div>
         </div>
-        :<button onClick={()=>navigate('/login')}className='bg-black text-white px-8 py-3 rounded-full font-light hidden md:block'>Create Account</button>
+        :<button onClick={()=>navigate('/Signup')}className='bg-black text-white px-8 py-3 rounded-full font-light hidden md:block'>Create Account</button>
         }
         
       </div>
