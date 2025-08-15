@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import React, { useState } from 'react';
 
 const ContactUs = () => {
   const [formData, setFormData] = useState({
@@ -20,15 +20,19 @@ const ContactUs = () => {
   };
 
   return (
-    <div className="max-w-2xl mx-auto p-6 rounded-2xl shadow-sm" style={{ minHeight: "calc(100vh - 100px)" }}>
-      <h1 className="text-2xl font-semibold mb-2">Contact Us   
-        <span className="material-symbols-outlined text-4xl">mail</span>
-      </h1>
-      <p className="text-gray-500 mb-6">We'd love to hear from you! Fill out the form below and we'll get in touch.</p>
+    <div className="flex justify-center items-center" style={{ minHeight: "calc(100vh - 100px)" }}>
+      <div className="shadow-md rounded-2xl p-8 w-full max-w-lg border border-gray-200">
+        
+        <h2 className="text-2xl font-bold mb-2 flex items-center">
+          Contact Us 
+          <span className="material-symbols-outlined text-4xl ml-2">mail</span>
+        </h2>
+        <p className="text-gray-500 mb-6">
+          We'd love to hear from you! Fill out the form below and we'll get in touch.
+        </p>
 
-      <form onSubmit={handleSubmit} className="space-y-5">
-        <div>
-          <label className="block mb-1 font-medium">Your Name</label>
+        <form onSubmit={handleSubmit}>
+          <label className="block font-semibold mb-1">Your Name</label>
           <input
             type="text"
             name="name"
@@ -36,12 +40,10 @@ const ContactUs = () => {
             value={formData.name}
             onChange={handleChange}
             required
-            className="w-full border border-gray-300 rounded-xl p-3 focus:outline-none focus:border-black"
+            className="border border-gray-300 p-2 px-5 w-full mb-4 rounded-2xl focus:outline-none focus:ring-2 focus:ring-black"
           />
-        </div>
 
-        <div>
-          <label className="block mb-1 font-medium">Your Email</label>
+          <label className="block font-semibold mb-1">Your Email</label>
           <input
             type="email"
             name="email"
@@ -49,31 +51,30 @@ const ContactUs = () => {
             value={formData.email}
             onChange={handleChange}
             required
-            className="w-full border border-gray-300 rounded-xl p-3 focus:outline-none focus:border-black"
+            className="border border-gray-300 p-2 px-5 w-full mb-4 rounded-2xl focus:outline-none focus:ring-2 focus:ring-black"
           />
-        </div>
 
-        <div>
-          <label className="block mb-1 font-medium">Your Message</label>
+          <label className="block font-semibold mb-1">Your Message</label>
           <textarea
             name="message"
             placeholder="Write your message..."
             value={formData.message}
             onChange={handleChange}
             required
-            className="w-full border border-gray-300 rounded-xl p-3 h-28 resize-none focus:outline-none focus:border-black"
+            className="border border-gray-300 p-2 px-5 w-full mb-6 h-28 resize-none rounded-2xl focus:outline-none focus:ring-2 focus:ring-black"
           ></textarea>
-        </div>
 
-        <button
-          type="submit"
-          className="bg-black text-white px-6 py-3 rounded-full hover:scale-105 transition-transform duration-300"
-        >
-          Send Message
-        </button>
-      </form>
+          <button
+            type="submit"
+            className="bg-black text-white px-4 py-2 cursor-pointer rounded-3xl w-full hover:bg-gray-800 transition"
+          >
+            Send Message
+          </button>
+        </form>
+
+      </div>
     </div>
-  )
-}
+  );
+};
 
 export default ContactUs;

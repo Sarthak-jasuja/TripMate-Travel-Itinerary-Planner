@@ -19,7 +19,6 @@ const Signup = () => {
   const handleSubmit = async (e) => {
     e.preventDefault();
 
-    // Basic validation
     if (!formData.name || !formData.email || !formData.password || !formData.confirmPassword) {
       setError("Please fill all fields");
       return;
@@ -41,7 +40,7 @@ const Signup = () => {
 
       const data = await res.json();
       if (res.ok) {
-        navigate("/login"); 
+        navigate("/login");
       } else {
         setError(data.message || "Signup failed");
       }
@@ -53,61 +52,66 @@ const Signup = () => {
 
   return (
     <div className="flex justify-center items-center" style={{ minHeight: "calc(100vh - 100px)" }}>
-      <div className="bg-white p-8 rounded-lg shadow-lg w-96">
-        <h2 className="text-2xl font-semibold text-center mb-6">Create Account</h2>
+      <div className="bg-white shadow-md rounded-2xl p-8 w-full max-w-lg border border-gray-200">
+        <h2 className="text-2xl font-bold mb-2 flex items-center">Create Account</h2>
+        <p className="text-gray-500 mb-6">Fill in your details to sign up for an account.</p>
 
         {error && <p className="text-red-500 text-sm mb-4">{error}</p>}
 
-        <form onSubmit={handleSubmit} className="space-y-4">
+        <form onSubmit={handleSubmit}>
+          <label className="block font-semibold mb-1">Full Name</label>
           <input
             type="text"
             name="name"
-            placeholder="Full Name"
+            placeholder="Enter your full name"
             value={formData.name}
             onChange={handleChange}
-            className="w-full p-3 border rounded-lg focus:outline-none focus:ring-2 focus:ring-black"
+            className="border border-gray-300 p-2 px-5 w-full mb-4 rounded-2xl focus:outline-none focus:ring-2 focus:ring-black"
           />
 
+          <label className="block font-semibold mb-1">Email Address</label>
           <input
             type="email"
             name="email"
-            placeholder="Email Address"
+            placeholder="Enter your email"
             value={formData.email}
             onChange={handleChange}
-            className="w-full p-3 border rounded-lg focus:outline-none focus:ring-2 focus:ring-black"
+            className="border border-gray-300 p-2 px-5 w-full mb-4 rounded-2xl focus:outline-none focus:ring-2 focus:ring-black"
           />
 
+          <label className="block font-semibold mb-1">Password</label>
           <input
             type="password"
             name="password"
-            placeholder="Password"
+            placeholder="Enter your password"
             value={formData.password}
             onChange={handleChange}
-            className="w-full p-3 border rounded-lg focus:outline-none focus:ring-2 focus:ring-black"
+            className="border border-gray-300 p-2 px-5 w-full mb-4 rounded-2xl focus:outline-none focus:ring-2 focus:ring-black"
           />
 
+          <label className="block font-semibold mb-1">Confirm Password</label>
           <input
             type="password"
             name="confirmPassword"
-            placeholder="Confirm Password"
+            placeholder="Re-enter your password"
             value={formData.confirmPassword}
             onChange={handleChange}
-            className="w-full p-3 border rounded-lg focus:outline-none focus:ring-2 focus:ring-black"
+            className="border border-gray-300 p-2 px-5 w-full mb-6 rounded-2xl focus:outline-none focus:ring-2 focus:ring-black"
           />
 
           <button
             type="submit"
-            className="w-full bg-black text-white p-3 rounded-lg hover:bg-gray-800 transition"
+            className="bg-black text-white px-4 py-2 cursor-pointer rounded-3xl w-full hover:bg-gray-800 transition"
           >
             Sign Up
           </button>
         </form>
 
-        <p className="text-sm text-gray-600 text-center mt-4">
+        <p className="mt-4 text-sm text-center text-gray-600">
           Already have an account?{" "}
           <span
             onClick={() => navigate("/login")}
-            className="text-black font-semibold cursor-pointer hover:underline"
+            className="text-blue-600 cursor-pointer hover:underline"
           >
             Login
           </span>

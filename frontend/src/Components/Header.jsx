@@ -1,7 +1,14 @@
 import React from 'react';
-import { Link } from 'react-router-dom';
-
+import { Link,useNavigate } from 'react-router-dom';
 const Header = () => {
+  const navigate = useNavigate();
+  const handlePlanJourney = ()=>{
+    if(!localStorage.getItem('token')) {
+      navigate('/Journey');
+    } else {
+      navigate('/Journey');
+    }
+  }
   return (
     <div className='flex flex-col md:flex-row flex-wrap rounded-2xl px-6 md:px-10 lg:px-20 overflow-hidden' style={{ minHeight: "calc(100vh - 100px)" }}>
 
@@ -13,12 +20,10 @@ const Header = () => {
         <div>
           <p>your ultimate travel itinerary planner!</p>
         </div>
-        <Link to="/Journey">
-          <button className='flex text-white bg-black px-8 py-3 rounded-full text-m m-auto md:m-0 hover:scale-105 transition-all duration-300'>
+          <button onClick={handlePlanJourney} className='flex text-white bg-black px-8 py-3 rounded-full text-m m-auto md:m-0 hover:scale-105 transition-all duration-300'>
             Plan Journey for free
             <img src='/Assets/arrowRight.png' alt='arrow' className='w-6 h-6 ml-2 cursor-pointer'/>
           </button>
-        </Link>
       </div>
 
       {/* right side */}

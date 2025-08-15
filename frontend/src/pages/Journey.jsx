@@ -4,11 +4,12 @@ import GooglePlacesAutocomplete from 'react-google-places-autocomplete';
 import { BudgetList, SelectTravelList,AI_PROMPT } from "../constants/Options";
 import { Button } from "../Components/ui/button";
 import { toast } from "sonner";
-
+import { useNavigate } from "react-router-dom";
 
 const Journey = () => {
   const [place, setPlace] = useState(null);
   const [formData, setFormData] = useState({});
+  const navigate = useNavigate();
   const handleInputChange = (name, value)=>{
     
     setFormData({
@@ -94,7 +95,7 @@ const Journey = () => {
       </div>
       <div className="my-10 justify-items-start flex">
         <Button onClick={() => onGenerateTrip()}
-        className="cursor-pointer">Generate trip</Button>
+        className="cursor-pointer hover:bg-gray-800">Generate trip</Button>
       </div>
     </div>
   );

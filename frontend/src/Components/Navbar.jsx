@@ -35,7 +35,7 @@ const Navbar = () => {
             </div>
           </div>
         </div>
-        :<button onClick={()=>navigate('/Signup')}className='bg-black text-white px-8 py-3 rounded-full font-light hidden md:block'>Create Account</button>
+        :<button onClick={()=>navigate('/Signup')}className='bg-black cursor-pointer text-white px-8 py-3 rounded-full font-light hidden md:block hover:bg-gray-800'>Create Account</button>
         }
         
       </div>
