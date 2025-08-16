@@ -8,6 +8,7 @@ const userSchema = new mongoose.Schema({
     isverified: {type: Boolean, default: false},
     resetotp: {type: String, default: ''},
     resetotpExpiry: {type: Number, default: 0},
+    trips: [{ type: mongoose.Schema.Types.ObjectId, ref: "Trip" }]
 })
 const usermodel =mongoose.models.user || mongoose.model("user", userSchema);
 export default usermodel;

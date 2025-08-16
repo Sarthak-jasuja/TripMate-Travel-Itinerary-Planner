@@ -1,7 +1,13 @@
 import express from "express";
-import { login, logout, register } from "../controllers/AuthControllers.js";
+import { isUserVerified, login, logout, register, resetPassword, resetPasswordHandler, verifyOtp, verifyOtpHandler } from "../controllers/AuthControllers.js";
+import userAuth from "../middleware/userAuth.js";
 const authRouter = express.Router();
 authRouter.post("/register", register );
 authRouter.post("/login", login);
 authRouter.post("/logout", logout);
+authRouter.post("/sendotp", userAuth,verifyOtp);
+authRouter.post("/verify-account", userAuth,verifyOtpHandler);
+authRouter.post("/isauth", userAuth,isUserVerified);
+authRouter.post("/send-reset-otp", resetPassword);
+authRouter.post("/reset-password",resetPasswordHandler);
 export default authRouter;
